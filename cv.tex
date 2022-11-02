@@ -1,0 +1,298 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=1.4cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{darkgray}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+% \definecolor{sectiondivider}{HTML}{5D5D5D}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\name{EungGu}{Yun}
+\korname{윤}{응구}
+
+% \address{Goyang-si, Gyeonggi-do, Republic of Korea}
+
+\mobile{(+82) 010-4057-7239}
+\email{yuneg11@gmail.com}
+% \dateofbirth{Feb. 24, 1998}
+\homepage{yuneg11.github.io}
+\github{yuneg11}
+\linkedin{yuneg}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter{Created: \slshape\today}{}{\thepage}
+
+%-------------------------------------------------------------------------------
+%	Education
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cveducation
+    {M.S. in Artificial Intelligence (Expected)} % Degree
+    {\href{https://www.kaist.ac.kr/en/}{Korea Advanced Institute of Science and Technology (KAIST)}} % Institution
+    {\href{https://gsai.kaist.ac.kr}{Graduate School of AI}} % Department
+    {Daejeon, Korea} % Location
+    {Mar. 2021 - Feb. 2023 (Expected)} % Date(s)
+    {
+      \begin{cvitems} % Description(s) bullet points
+        \item {
+          Supervisor: \href{https://juho-lee.github.io}{\bfseries\color{graytext} Juho Lee}
+                  --- \href{https://siml.kaist.ac.kr}{Statistical Inference and Machine Learning Lab (SIML)}
+        }
+        \item {Thesis: \textit{Traversing Between Modes in Function Space for Fast Ensembling}}
+        \item {Research interests: Loss landscape, Neural processes}
+        \item {GPA: \ 4.08 / 4.3}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cveducation
+    {B.S. in Computer Science and Engineering} % Degree
+    {\href{https://www.skku.edu/eng/}{SungKyunKwan University (SKKU)}} % Institution
+    {\href{https://cs.skku.edu/en/college/department/cse_intro}{Department of Computer Science and Engineering, College of Computing}} % Department
+    {Seoul, Korea} % Location
+    {Mar. 2017 - Aug. 2020} % Date(s)
+    {
+      \begin{cvitems} % Description(s) bullet points
+        \item {Total GPA: \, 4.33 / 4.5}
+        \item {Major GPA: \  4.47 / 4.5}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+%-------------------------------------------------------------------------------
+%	Experience
+%-------------------------------------------------------------------------------
+\cvsection{Experience}
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cvexperience
+    {Research Intern} % Job title
+    {\href{https://aiis.snu.ac.kr/eng/}{Artificial Intelligence Institute of Seoul National University (AIIS)}} % Organization
+    {\href{http://drl.snu.ac.kr}{Deep Representation Learning Research Group (DRL)}} % Department
+    {Seoul, Korea} % Location
+    {Jun. 2020 - Sep. 2020} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Supervisor: \href{http://drl.snu.ac.kr/?p=13209}{\bfseries\color{graytext} Wonjong Rhee}}
+        \item {Research on model interpretability and activation on-off patterns.}
+        \item {Reproduce CNN visualization methods, including Grad-CAM, (C)LRP, etc.}
+      \end{cvitems}
+    }
+
+
+%---------------------------------------------------------
+  \cvexperience
+    {Research Intern} % Job title
+    {\href{https://etri.re.kr/eng/main/main.etri}{Electronics and Telecommunications Research Institute (ETRI)}} % Organization
+    {\href{https://etri.re.kr/eng/sub6/sub6_0101.etri?departCode=10}{Artificial Intelligence Research Laboratory}} % Department
+    {Daejeon, Korea} % Location
+    {Jan. 2020 - Feb. 2020} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Supervisor: \href{https://kr.linkedin.com/in/yoomipark-etri}{\bfseries\color{graytext} Yoo-mi Park}}
+        \item {Test and debug ETRI Deep Learning HPC Platform Dashboard.}
+        \item {Implement AlexNet and ResNet models with DL-MDL to serve as example deep learning models.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Awards \& Honors}
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cvhonor
+    {\href{https://www.kosaf.go.kr/eng/jsp/aid/aid02_01_01.jsp}{The National Scholarship for Science and Engineering}} % Title
+    {\href{https://www.kosaf.go.kr/eng/jsp/main.jsp}{Korea Student Aid Foundation (KOSAF)}} % Organization
+    {Spring 2019 - Spring 2020} % Date(s)
+    {
+      \begin{cvitems} % Description
+        \item {Supports undergraduates with strong academic performance in science and engineering.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cvhonor
+    {SungKyun Software Scholarship} % Title
+    {\href{https://www.skku.edu/eng/}{SungKyunKwan University (SKKU)}} % Organization
+    {Spring 2017 - Fall 2018} % Date(s)
+    {
+      \begin{cvitems} % Description
+        \item {Supports students with an outstanding GPA.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cvhonor
+    {\href{https://cs.skku.edu/en/edures/education/view/4137}{Dean's List Award}} % Title
+    {\href{https://cs.skku.edu/en}{College of Computing, SungKyunKwan University (SKKU)}} % Organization
+    {Spring 2017 - Fall 2019} % Date(s)
+    {
+      \begin{cvitems} % Description
+        \item {In recognition of high scholastic achievement. (6 times)}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+
+%-------------------------------------------------------------------------------
+%	Publication
+%-------------------------------------------------------------------------------
+\cvsection{Publications}
+
+\vspace{-2mm}
+
+\cvsubsection{Conference}
+
+\begin{cvsubentries}
+
+%---------------------------------------------------------
+  \cvpublication
+    {\href{https://openreview.net/forum?id=YVPBh4k78iZ}{Scale Mixtures of Neural Network Gaussian Processes}} % Title
+    {Hyungi Lee, \textbf{Eunggu Yun}, Hongseok Yang, Juho Lee} % Author(s)
+    {ICLR} % Venue
+    {2022} % Year
+    {}
+
+%---------------------------------------------------------
+\end{cvsubentries}
+
+\cvsubsection{Journal}
+
+\begin{cvsubentries}
+
+%---------------------------------------------------------
+  \cvpublication
+    {\href
+      {https://doi.org/10.1029/2021MS002921}
+      {Benefits of stochastic weight averaging in developing neural network radiation scheme for numerical weather prediction}
+    } % Title
+    {Hwan-Jin Song, Soonyoung Roh, Juho Lee, Giung Nam, \textbf{Eunggu Yun}, Jongmin Yoon, Park Sa Kim} % Author(s)
+    {JAMES} % Venue
+    {2022} % Year
+    {}
+
+%---------------------------------------------------------
+\end{cvsubentries}
+
+
+%-------------------------------------------------------------------------------
+%	Project
+%-------------------------------------------------------------------------------
+\cvsection{Projects}
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cvproject
+    {Bayesian inference for time-series data with missing values} % Title
+    {\href{https://research.samsung.com}{Samsung Research}} % Organization
+    {Aug. 2022 - Feb. 2023} % Date(s)
+    {
+      \begin{cvitems} % Description
+        \item {Developing a Bayesian deep learning method that can quantify uncertainty within missing values.}
+        \item {Propose multivariate time-series classification model using a regularization method called ObsDropout.}
+        \item {Validate proposed method on PhysioNet 2012, MIMIC-III, and UCI human activity datasets.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cvproject
+    {Developing artificial intelligence based emulator for physics processes in numerical models} % Title
+    {\href{http://www.nims.go.kr/AE/MA/main.jsp}{National Institute of Meteorological Sciences (NIMS)}} % Organization
+    {May 2021 - July 2022} % Date(s)
+    {
+      \begin{cvitems} % Description
+        \item {Research on the developing alternative techniques of physical processes in the numerical weather prediction (NWP) model based on AI to reduce computational costs and to improve the accuracy of NWP.}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+
+
+%-------------------------------------------------------------------------------
+%	Skills
+%-------------------------------------------------------------------------------
+\cvsection{Skills}
+\begin{cvskills}
+
+%---------------------------------------------------------
+  \cvskill
+    {Programming} % Category
+    {Python, JavaScript, C, C++, LaTeX} % Skills
+
+%---------------------------------------------------------
+  \cvskill
+    {Deep Learning} % Category
+    {PyTorch (+ PyTorch/XLA), JAX (+ Flax, Optax), TensorFlow (+ Keras)} % Skills
+
+%---------------------------------------------------------
+  \cvskill
+    {System} % Category
+    {Linux, Docker, Google Cloud Platform (+ TPU)} % Skills
+
+%---------------------------------------------------------
+  \cvskill
+    {Languages} % Category
+    {Korean (native), English (intermediate)} % Skills
+
+%---------------------------------------------------------
+\end{cvskills}
+
+%-------------------------------------------------------------------------------
+\end{document}
