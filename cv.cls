@@ -91,8 +91,10 @@
 % Needed to use korean
 \RequirePackage{kotex}
 % Needed to change date format
-\RequirePackage[en-US]{datetime2}
-\DTMlangsetup[en-US]{abbr,monthyearsep={,\space}}  % TODO: add dot after month
+\RequirePackage{datetime2}
+\DTMsetstyle{default}
+\DTMsetup{datesep={.\ }}
+
 
 %-------------------------------------------------------------------------------
 %                Configuration for layout
@@ -342,7 +344,7 @@
           % \mbox prevents wrapping of elements%
           \mbox{\faBirthdayCake\acvHeaderIconSep\@dateofbirth}%
         }%
-      \\ \setbool{isstart}{true}%
+      % \\ \setbool{isstart}{true}%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
         {%
@@ -385,7 +387,7 @@
 \newcommand{\cvsection}[1]{%
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
-  \phantomsection \\[-2mm]
+  \phantomsection\\[-2mm]
   \color{sectiondivider}\vhrulefill{.7pt}
 }
 
@@ -457,7 +459,7 @@
 }
 
 % Define a line of cv information(honor, award or something else)
-% Usage: \cventry{<title>}{<subtitle>}{<date>}{<description>}
+% Usage: \cvhonor{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvhonor}[4]{%
   \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
@@ -470,7 +472,7 @@
 }
 
 % Define a line of cv information(honor, award or something else)
-% Usage: \cventry{<title>}{<subtitle>}{<date>}{<description>}
+% Usage: \cvproject{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvproject}[4]{%
   \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
@@ -478,7 +480,24 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.8cm} R{2.8cm}}
     \projecttitlestyle{#1} & \projectdatestyle{#3} \\[1mm]
     \projectsubtitlestyle{#2} & \\
-    \projectdescriptionstyle{#4}
+    \multicolumn{2}{L{\textwidth}}{\projectdescriptionstyle{#4}}
+  \end{tabular*}%
+}
+
+% Define a line of cv information(honor, award or something else)
+% Usage: \cvsoftware{<title>}{<subtitle>}{<date>}{<description>}
+\newcommand*{\cvsoftware}[4]{%
+  \vspace{-1.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.8cm} R{2.8cm}}
+    \projecttitlestyle{#1} & \projectdatestyle{#3} \\[1mm]
+    \ifempty{#4}{%
+      \publicationsubtitlestyle{#2}
+    }{%
+      \publicationsubtitlestyle{#2} & \\
+      \multicolumn{2}{L{\textwidth}}{\projectdescriptionstyle{#4}}
+    }
   \end{tabular*}%
 }
 
@@ -520,7 +539,7 @@
   \vspace{1mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.5cm} R{2.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.7cm} R{2.7cm}}
     \publicationtitlestyle{#1} & \publicationvenuestyle{#3} \\[.5mm]
     \publicationsubtitlestyle{#2} & \publicationyearstyle{#4}
     \ifempty{#5}{}{
