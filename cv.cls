@@ -536,7 +536,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<title>}{<subtitle>}{<location>}{<year>}{<description>}
 \newcommand*{\cvpublication}[5]{%
-  \vspace{1mm}
+  \vspace{1.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.7cm} R{2.7cm}}
