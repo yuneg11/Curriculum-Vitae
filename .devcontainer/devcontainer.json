@@ -1,0 +1,13 @@
+{
+    "name": "latex-env",
+    "image": "ghcr.io/yuneg11/latex-env:20240320",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop",
+                "MS-CEINTL.vscode-language-pack-ko",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}
