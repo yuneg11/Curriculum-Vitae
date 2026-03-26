@@ -187,6 +187,11 @@
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
+% For elements of service
+\newcommand*{\servicerolestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\color{darktext} #1}}
+\newcommand*{\servicenamestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
+\newcommand*{\servicesetstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{text} #1}}
+
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
 \newcommand*{\honorsubtitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{darktext} #1}}
@@ -197,15 +202,15 @@
 \newcommand*{\projecttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
 \newcommand*{\projectsubtitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{darktext} #1}}
 \newcommand*{\projectdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\projectdescriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\projectdescriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text}\setstretch{1.10} #1}}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of publication
-\newcommand*{\publicationtitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
-\newcommand*{\publicationsubtitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{darktext} #1}}
+\newcommand*{\publicationtitlestyle}[1]{{\fontsize{10.1pt}{1em}\bodyfontlight\bfseries\color{darktext} #1}}
+\newcommand*{\publicationsubtitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{darktext} #1}}
 \newcommand*{\publicationvenuestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{awesome} #1}}
 \newcommand*{\publicationyearstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\publicationdescriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
@@ -280,7 +285,7 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{1.5mm}
+\newcommand{\acvHeaderAfterNameSkip}{2mm}
 \newcommand{\acvHeaderAfterKorNameSkip}{1.5mm}
 \newcommand{\acvHeaderAfterAddressSkip}{1.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
@@ -404,6 +409,11 @@
   \vspace{\acvSectionContentTopSkip}
   \vspace{-3mm}
   \paragraphstyle
+  \setstretch{1.15}
+  \setlength{\parindent}{0pt}
+  \justifying
+  \noindent
+  \ignorespaces
 }{%
   \par
   \vspace{2mm}
@@ -420,7 +430,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<subtitle>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[6]{%
-  \vspace{-1.0mm}
+  \vspace{1mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -458,10 +468,28 @@
   \end{tabular*}
 }
 
+% Define an environment for cvservices
+\newenvironment{cvservices}{%
+  % \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+    \setlength\tabcolsep{1ex}
+    \setlength{\extrarowheight}{3pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l L{\textwidth * \real{0.9}}}
+}{%
+    \end{tabular*}
+  \end{center}
+  \vspace{\acvSectionContentTopSkip}
+}
+
+% Define a line of cv information(service)
+% Usage: \cvservice{<role>}{<name>}{<serviceset>}
+\newcommand*{\cvservice}[3]{%
+	\servicerolestyle{#1}\, \servicenamestyle{#2} & \servicesetstyle{#3} \\
+}
+
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvhonor}[4]{%
-  \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3.5cm} R{3.5cm}}
@@ -474,7 +502,6 @@
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvproject{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvproject}[4]{%
-  \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.8cm} R{2.8cm}}
@@ -503,11 +530,9 @@
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
+    \setlength{\extrarowheight}{3pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
 }{%
     \end{tabular*}
