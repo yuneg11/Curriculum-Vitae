@@ -57,6 +57,8 @@
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
+% Reduce only the first-page top margin from 1.4 cm to 1.0 cm.
+\newgeometry{left=1.4cm, top=1.0cm, right=1.4cm, bottom=1.6cm, footskip=.5cm}
 \makecvheader
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
@@ -109,7 +111,6 @@ My background includes research on neural-network \href{https://arxiv.org/abs/23
         \item {Research on image anomaly detection (IAD) systems for industrial inspection.}
         \item {Research language-assisted vision models for data-efficient training.}
         \item {Conduct TensorRT-based optimization for real-time inference in object detection and tracking.}
-        \item {Fine-tune VLMs for context-aware industrial safety monitoring.}
       \end{cvitems}
     }
 
@@ -182,7 +183,7 @@ My background includes research on neural-network \href{https://arxiv.org/abs/23
 
 \end{cventries}
 
-\clearpage
+\restoregeometry
 
 %-------------------------------------------------------------------------------
 %	Publication
