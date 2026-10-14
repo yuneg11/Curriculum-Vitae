@@ -427,12 +427,17 @@
   \end{center}
 }
 
+% Spacing controls for work and education entries.
+\newcommand{\acvEntrySeparation}{3mm}
+\newcommand{\acvEntryItemSeparation}{1mm}
+\newcommand{\acvEntryBodySeparation}{.7mm}
+
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<subtitle>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[6]{%
   \begingroup
   \setlength{\parskip}{0pt}
-  \par\addvspace{3mm}
+  \par\addvspace{\acvEntrySeparation}
   % Use one unbroken entry, with explicit space between neighboring entries.
   \noindent\begin{minipage}{\textwidth}
     \setlength\tabcolsep{0pt}
@@ -445,10 +450,10 @@
          \entrypositionstyle{#1} & \entrydatestyle{#5}%
          \ifempty{#3}{}{\\\entrysubtitlestyle{#3} &}}
     \end{tabular*}%
-    \par\vspace{.7mm}
+    \par\vspace{\acvEntryBodySeparation}
     % The list sits below the header rather than in a vertically centered cell.
     \renewenvironment{cvitems}{%
-      \begin{itemize}[leftmargin=2ex, nosep, itemsep=1mm]
+      \begin{itemize}[leftmargin=2ex, nosep, itemsep=\acvEntryItemSeparation]
         \renewcommand{\labelitemi}{\bullet}
     }{%
       \end{itemize}
@@ -490,7 +495,7 @@
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{3pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l L{\textwidth * \real{0.9}}}
+    \begin{tabular*}{\textwidth}{@{}L{6cm}@{\hspace{1em}}L{\textwidth - 6cm - 1em}@{}}
 }{%
     \end{tabular*}
   \end{center}
@@ -506,25 +511,41 @@
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvhonor}[4]{%
+  \begingroup
+  \setlength{\parskip}{0pt}
+  \par\addvspace{2mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3.5cm} R{3.5cm}}
-    \honortitlestyle{#1} & \honordatestyle{#3} \\[1mm]
-    \honorsubtitlestyle{#2} & \\
-    \honordescriptionstyle{#4}
+    \honortitlestyle{#1} & \honordatestyle{#3} \\[.4mm]
+    \honorsubtitlestyle{#2} &
   \end{tabular*}%
+  \def\renderhonordescription{\par\vspace{.7mm}\honordescriptionstyle{#4}}
+  \ifempty{#4}{}{\renderhonordescription}
+  \par
+  \endgroup
 }
 
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvproject{<title>}{<subtitle>}{<date>}{<description>}
 \newcommand*{\cvproject}[4]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.8cm} R{2.8cm}}
-    \projecttitlestyle{#1} & \projectdatestyle{#3} \\[1mm]
-    \projectsubtitlestyle{#2} & \\
-    \multicolumn{2}{L{\textwidth}}{\projectdescriptionstyle{#4}}
-  \end{tabular*}%
+  \begingroup
+  \setlength{\parskip}{0pt}
+  \par\addvspace{3mm}
+  \noindent\begin{minipage}{\textwidth}
+    \projecttitlestyle{#1}\par\vspace{.5mm}
+    \setlength\tabcolsep{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 3cm} R{3cm}}
+      \projectsubtitlestyle{#2} & \projectdatestyle{#3}
+    \end{tabular*}%
+    \par\vspace{.7mm}
+    \renewenvironment{cvitems}{%
+      \begin{itemize}[leftmargin=2ex, nosep, itemsep=1mm]
+        \renewcommand{\labelitemi}{\bullet}
+    }{\end{itemize}}
+    \projectdescriptionstyle{#4}
+  \end{minipage}\par
+  \endgroup
 }
 
 % Define a line of cv information(honor, award or something else)
@@ -549,7 +570,7 @@
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{3pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+    \begin{tabular*}{\textwidth}{@{}R{2.6cm}@{\hspace{1em}}L{\textwidth - 2.6cm - 1em}@{}}
 }{%
     \end{tabular*}
   \end{center}
