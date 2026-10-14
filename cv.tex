@@ -72,24 +72,42 @@
 \color{sectiondivider}\vhrulefill{.7pt}
 
 \begin{cvparagraph}
-I am an AI researcher at \href{https://saige.ai/en/}{\textbf{SAIGE}}, working on industrial computer vision.
-I specialize in image anomaly detection and efficient training and inference, with a strong interest in \href{https://arxiv.org/abs/2503.01184}{\textbf{incorporating language into vision systems}} for data-efficient and context-aware solutions.
-During my M.S. at \href{https://www.kaist.ac.kr/en/}{\textbf{KAIST}}, I studied the \href{https://arxiv.org/abs/2306.11304}{\textbf{loss landscape}} of neural networks.
+I am an AI researcher at \href{https://www.krafton.com/}{\textbf{KRAFTON}}, working on the evaluation of large language models and speech models.
+I assess model capabilities and examine their behavior in conversational and agentic settings.
+
+\noindent During my M.S. at \href{https://www.kaist.ac.kr/en/}{\textbf{KAIST}}, I studied the \href{https://arxiv.org/abs/2306.11304}{\textbf{loss landscape}} of neural networks.
+After graduating, I worked on computer vision at \href{https://saige.ai/en/}{\textbf{SAIGE}}, particularly image anomaly detection and \href{https://arxiv.org/abs/2503.01184}{\textbf{language-assisted vision}}.
 \end{cvparagraph}
 
 %-------------------------------------------------------------------------------
 %	Experience
 %-------------------------------------------------------------------------------
+% Keep the first-page entries compact as the work history grows.
+\let\originalcvitems\cvitems
+\patchcmd{\cvitems}{itemsep=1.5mm}{itemsep=0.5mm}{}{}
 \cvsection{Experience}
 \begin{cventries}
 \vspace{-1mm}
 
   \cvexperience
     {AI Researcher} % Job title
+    {\href{https://www.krafton.com/}{KRAFTON}} % Organization
+    {} % Department
+    {Seoul, Korea} % Location
+    {2026. 08 -- Now} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Evaluate large language models and speech models.}
+        \item {Assess model capabilities and examine their behavior in conversational and agentic settings.}
+      \end{cvitems}
+    }
+
+  \cvexperience
+    {AI Researcher} % Job title
     {\href{https://saige.ai/en/}{SAIGE}} % Organization
     {AI Lab} % Department
     {Seoul, Korea} % Location
-    {2023. 03 -- Now} % Date(s)
+    {2023. 03 -- 2026. 07} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {Research on image anomaly detection (IAD) systems for industrial inspection.}
@@ -168,6 +186,7 @@ During my M.S. at \href{https://www.kaist.ac.kr/en/}{\textbf{KAIST}}, I studied 
 
 \end{cventries}
 
+\let\cvitems\originalcvitems
 \clearpage
 
 %-------------------------------------------------------------------------------
