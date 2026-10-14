@@ -430,17 +430,33 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<subtitle>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[6]{%
-  \vspace{1mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3#4}
-      {\entrypositionstyle{#1} & \entrydatestyle{#5} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#4} \\
-       \entrysubtitlestyle{#3} & \entrydatestyle{#5} \\[1mm]
-       \entrypositionstyle{#1} & \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}
-  \end{tabular*}%
+  \begingroup
+  \setlength{\parskip}{0pt}
+  \par\addvspace{3mm}
+  % Use one unbroken entry, with explicit space between neighboring entries.
+  \noindent\begin{minipage}{\textwidth}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    % Keep role and dates together; do not create an empty department row.
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+      \ifempty{#2#3#4}
+        {\entrypositionstyle{#1} & \entrydatestyle{#5}}
+        {\entrytitlestyle{#2} & \entrylocationstyle{#4} \\[.3mm]
+         \entrypositionstyle{#1} & \entrydatestyle{#5}%
+         \ifempty{#3}{}{\\\entrysubtitlestyle{#3} &}}
+    \end{tabular*}%
+    \par\vspace{.7mm}
+    % The list sits below the header rather than in a vertically centered cell.
+    \renewenvironment{cvitems}{%
+      \begin{itemize}[leftmargin=2ex, nosep, itemsep=1mm]
+        \renewcommand{\labelitemi}{\bullet}
+    }{%
+      \end{itemize}
+    }
+    \descriptionstyle{#6}
+  \end{minipage}%
+  \par
+  \endgroup
 }
 
 % Define an environment for cvsubentry
