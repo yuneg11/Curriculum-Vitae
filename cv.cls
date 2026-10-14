@@ -432,7 +432,7 @@
 \newcommand*{\cventry}[6]{%
   \begingroup
   \setlength{\parskip}{0pt}
-  \par\addvspace{3mm}
+  \par\addvspace{3.5mm}
   % Use one unbroken entry, with explicit space between neighboring entries.
   \noindent\begin{minipage}{\textwidth}
     \setlength\tabcolsep{0pt}
@@ -441,14 +441,14 @@
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
       \ifempty{#2#3#4}
         {\entrypositionstyle{#1} & \entrydatestyle{#5}}
-        {\entrytitlestyle{#2} & \entrylocationstyle{#4} \\[.3mm]
+        {\entrytitlestyle{#2} & \entrylocationstyle{#4} \\[.5mm]
          \entrypositionstyle{#1} & \entrydatestyle{#5}%
          \ifempty{#3}{}{\\\entrysubtitlestyle{#3} &}}
     \end{tabular*}%
-    \par\vspace{.7mm}
+    \par\vspace{1mm}
     % The list sits below the header rather than in a vertically centered cell.
     \renewenvironment{cvitems}{%
-      \begin{itemize}[leftmargin=2ex, nosep, itemsep=1mm]
+      \begin{itemize}[leftmargin=2ex, nosep, itemsep=1.15mm]
         \renewcommand{\labelitemi}{\bullet}
     }{%
       \end{itemize}
